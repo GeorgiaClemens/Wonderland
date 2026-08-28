@@ -6,7 +6,7 @@
 
 <title>Alice in Wonderland Invitation</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=@300;400;600&display=swap
+https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;600&display=swap
 
 <style>
 
@@ -65,4 +65,389 @@ INTRO
     bottom:120px;
     left:72%;
     width:120px;
-    height:
+    height:35px;
+    background:black;
+    border-radius:50%;
+}
+
+.fall{
+    animation:fallIntoHole 1.5s forwards;
+}
+
+@keyframes fallIntoHole{
+
+    from{
+        transform:scale(1);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(120px) scale(.1);
+        opacity:0;
+    }
+}
+
+/* ---------------------------------
+TUNNEL
+---------------------------------- */
+
+#tunnel{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:black;
+    overflow:hidden;
+}
+
+.ring{
+    position:absolute;
+    left:50%;
+    top:50%;
+    border:4px solid rgba(255,255,255,.2);
+    border-radius:50%;
+    transform:translate(-50%,-50%);
+    animation:zoom 4s infinite linear;
+}
+
+@keyframes zoom{
+    from{
+        width:50px;
+        height:50px;
+        opacity:1;
+    }
+
+    to{
+        width:2200px;
+        height:2200px;
+        opacity:0;
+    }
+}
+
+.card{
+    position:absolute;
+    color:white;
+    font-size:40px;
+    animation:floatDown 5s infinite linear;
+}
+
+.card:nth-child(2){left:15%;}
+.card:nth-child(3){left:35%;}
+.card:nth-child(4){left:55%;}
+.card:nth-child(5){left:75%;}
+
+@keyframes floatDown{
+
+    from{
+        top:-100px;
+        transform:rotate(0deg);
+    }
+
+    to{
+        top:120%;
+        transform:rotate(720deg);
+    }
+}
+
+/* ---------------------------------
+INVITATION
+---------------------------------- */
+
+#invite{
+    display:none;
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle,
+        #6a3d72 0%,
+        #3b1844 50%,
+        #180420 100%
+    );
+
+    color:white;
+    overflow:auto;
+}
+
+.content{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.title{
+    font-family:'Cinzel',serif;
+    font-size:4rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    font-size:1.5rem;
+    margin-bottom:40px;
+}
+
+.details p{
+    margin:10px 0;
+}
+
+/* ---------------------------------
+COUNTDOWN
+---------------------------------- */
+
+.countdown-section{
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:rgba(255,255,255,.1);
+    padding:20px;
+    min-width:120px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.time-box span{
+    font-size:2.5rem;
+    font-weight:bold;
+    display:block;
+    color:#ffd8ea;
+}
+
+/* ---------------------------------
+BUTTON
+---------------------------------- */
+
+.rsvp-button{
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    background:#ff4f8b;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.rsvp-button:hover{
+    transform:scale(1.05);
+}
+
+/* ---------------------------------
+RESPONSIVE
+---------------------------------- */
+
+@media(max-width:768px){
+
+.title{
+    font-size:2.5rem;
+}
+
+#countdown{
+    gap:10px;
+}
+
+.time-box{
+    min-width:90px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- INTRO -->
+
+<div id="intro">
+
+    <h1 class="intro-title">We're All Mad Here...</h1>
+
+    <p class="intro-subtitle">
+        Follow The Rabbit
+    </p>
+
+    <div class="rabbit" id="rabbit">
+        🐇
+    </div>
+
+    <div class="hole"></div>
+
+</div>
+
+<!-- TUNNEL -->
+
+<div id="tunnel">
+
+    <div class="ring"></div>
+
+    <div class="card">♠</div>
+    <div class="card">♥</div>
+    <div class="card">♦</div>
+    <div class="card">♣</div>
+
+</div>
+
+<!-- INVITATION -->
+
+<div id="invite">
+
+<div class="content">
+
+<h1 class="title">Alice in Wonderland</h1>
+
+<p class="subtitle">
+An Evening of Curiosities, Cocktails & Madness
+</p>
+
+<div class="details">
+
+<p>📅 Friday 23 October 2026</p>
+
+<p>📍 Wonderland Gardens, Tauranga</p>
+
+<p>🍸 Drinks & Canapés</p>
+
+<p>🎩 Wonderland Dress Theme</p>
+
+<p>⏰ 6:00pm until late</p>
+
+</div>
+
+<div class="countdown-section">
+
+<h2>⏰ The White Rabbit's Clock</h2>
+
+<br>
+
+<div id="countdown">
+
+<div class="time-box">
+<span id="days">00</span>
+<label>Days</label>
+</div>
+
+<div class="time-box">
+<span id="hours">00</span>
+<label>Hours</label>
+</div>
+
+<div class="time-box">
+<span id="minutes">00</span>
+<label>Minutes</label>
+</div>
+
+<div class="time-box">
+<span id="seconds">00</span>
+<label>Seconds</label>
+</div>
+
+</div>
+
+</div>
+
+https://forms.office.com
+
+RSVP Before The Queen Loses Her Head
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+/* Rabbit jumps */
+
+setTimeout(() => {
+
+document
+.getElementById("rabbit")
+.classList
+.add("fall");
+
+},5000);
+
+/* Tunnel */
+
+setTimeout(() => {
+
+document
+.getElementById("intro")
+.style.display="none";
+
+document
+.getElementById("tunnel")
+.style.display="block";
+
+},6500);
+
+/* Invitation */
+
+setTimeout(() => {
+
+document
+.getElementById("tunnel")
+.style.display="none";
+
+document
+.getElementById("invite")
+.style.display="block";
+
+},10500);
+
+/* Countdown */
+
+const eventDate = new Date(
+"October 23, 2026 18:00:00"
+).getTime();
+
+const timer = setInterval(() => {
+
+const now = new Date().getTime();
+
+const distance = eventDate - now;
+
+const days =
+Math.floor(distance/(1000*60*60*24));
+
+const hours =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds =
+Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
+
+},1000);
+
+</script>
+
+</body>
+</html>
